@@ -18,7 +18,9 @@ namespace University.Service.Areas.HelpPage.Models
 
         public List<Teacher> Teachers { get; set; }
 
+        public List<Attendence> Attendences { get; set; }
 
+        public List<Student> Students { get; set; }
     }
 
     public enum CourseType

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/SimpleShapesModel" xmlns:dm9="http://schemas.microsoft.com/dsltools/UseCaseModel"
   dslVersion="1.0.0.0"
   Id="42c49508-6369-4f89-9919-581bafc03565"
   name="UniversityArchitecture" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -17,6 +17,244 @@
         name="StandardProfileL3" />
     </packageHasProfileInstances>
   </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <useCase
+        Id="d01dd70c-651d-45a2-9e55-e9d81b41ad28"
+        name="REST Service Authenticate Application &amp; Users"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="2bfbe65f-a09c-4826-9d32-8ec0a3e13995"
+        name="Sends Request With data"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="9111fc61-8122-4e8f-9c9e-e1bf7a12952f"
+            LastKnownName="University.Service "
+            LastKnownLocation="UniversityArchitecture.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="e0e955ec-6685-4007-b630-fd5a48eefbf1"
+        name=" Sends credentials to the service "
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="9111fc61-8122-4e8f-9c9e-e1bf7a12952f"
+            LastKnownName="University.Service "
+            LastKnownLocation="UniversityArchitecture.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <actor
+        Id="aebd18cc-4ff9-4ef8-9207-2990afbfc703"
+        name="Application / Browser"
+        isAbstract="false"
+        isLeaf="false">
+        <targetEnds>
+          <association
+            Id="08c70862-c1ce-4067-bc90-bac8cb0330fd"
+            isDerived="false"
+            sourceEndRoleName="Actor1"
+            targetEndRoleName="Application &amp; User sends request to the service "
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="e0e955ec-6685-4007-b630-fd5a48eefbf1"
+              LastKnownName=" Sends credentials to the service "
+              LastKnownLocation="UniversityArchitecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="d41c561c-0656-4fd6-a817-da0417c056a0"
+                  name="Actor1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="6484668f-017a-4bd2-aa9c-36838d366153"
+                  name="Application &amp; User sends request to the service "
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="9456e8be-800e-46c7-b690-dadbf16ef4ac"
+            isDerived="false"
+            sourceEndRoleName="Actor1"
+            targetEndRoleName=""
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="2bfbe65f-a09c-4826-9d32-8ec0a3e13995"
+              LastKnownName="Sends Request With data"
+              LastKnownLocation="UniversityArchitecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3a23c054-0752-4a1f-bf55-6ba9c44dd81a"
+                  name="Actor1"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="a636e5c7-9acc-4d74-b504-2b13e9650441"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="0df0827a-e4f5-4e9c-bfff-f882e2969421"
+            isDerived="false"
+            sourceEndRoleName="Application / User"
+            targetEndRoleName="Sends GET, PUT, POST Or DELETE requests"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="0b6a9625-d25f-4366-8de7-e3b74879a7d0"
+              LastKnownName="Sends GET, PUT, POST Or DELETE requests"
+              LastKnownLocation="UniversityArchitecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="5e90d799-2fb3-4159-a947-4f767b429927"
+                  name="Application / User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="66e2e648-6bf8-4e5f-b112-323b27014f33"
+                  name="Sends GET, PUT, POST Or DELETE requests"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="ae73205b-33c5-4693-84ab-bf99bd504a1c"
+            isDerived="false"
+            sourceEndRoleName="Application / User"
+            targetEndRoleName="Recive Requested Data and Specific HTTP Message for the rquest"
+            isLeaf="false"
+            isAbstract="false">
+            <useCaseMoniker
+              Id="79a0050e-9ed0-4167-8c1f-666b476dcd5c"
+              LastKnownName="Recive Requested Data and Specific HTTP Message for the rquest"
+              LastKnownLocation="UniversityArchitecture.uml" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="3d996439-a069-46b5-9402-6024eecf132c"
+                  name="Application / User"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false" />
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="c55eb507-99bc-46fb-be1f-df12549344e2"
+                  name="Recive Requested Data and Specific HTTP Message for the rquest"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false" />
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+        </targetEnds>
+      </actor>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="0b6a9625-d25f-4366-8de7-e3b74879a7d0"
+        name="Sends GET, PUT, POST Or DELETE requests"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="9111fc61-8122-4e8f-9c9e-e1bf7a12952f"
+            LastKnownName="University.Service "
+            LastKnownLocation="UniversityArchitecture.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <subsystem
+        Id="9111fc61-8122-4e8f-9c9e-e1bf7a12952f"
+        name="University.Service "
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <useCase
+        Id="79a0050e-9ed0-4167-8c1f-666b476dcd5c"
+        name="Recive Requested Data and Specific HTTP Message for the rquest"
+        isAbstract="false"
+        isLeaf="false">
+        <subjects>
+          <subsystemMoniker
+            Id="9111fc61-8122-4e8f-9c9e-e1bf7a12952f"
+            LastKnownName="University.Service "
+            LastKnownLocation="UniversityArchitecture.uml" />
+        </subjects>
+      </useCase>
+    </packageHasNamedElement>
+  </packagedElements>
   <primitiveType
     Id="220a3521-e091-4221-bae9-3ef9018e845c"
     name="Integer"

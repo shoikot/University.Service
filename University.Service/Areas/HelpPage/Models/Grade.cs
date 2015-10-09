@@ -13,5 +13,8 @@ namespace University.Service.Areas.HelpPage.Models
         public decimal GradePoint { get; set; }
 
         public string GradeSymbol { get; set; }
+
+
+        public List<University.Service.Areas.HelpPage.Models.Result> Results { get; set; }
     }
 }
