@@ -19,6 +19,9 @@ namespace UniversityData
         public Department Department { get; set; }
 
         public List<Attendence> Attendences { get; set; }
+
+
+        public List<Result> Results { get; set; }
     }
 
 
