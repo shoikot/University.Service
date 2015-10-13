@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace University.Service.Models
 {
@@ -18,10 +19,10 @@ namespace University.Service.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("DefaultConnection")
         {
         }
         
@@ -123,6 +124,17 @@ namespace University.Service.Models
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Result>().HasRequired(p => p.TimeTable).WithMany().HasForeignKey(p=>p.TimeTableId);
 
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Student>().HasKey(p => p.StudentId);
+
+            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
+            
+            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
+
+            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
+        }
+
+        protected override void OnConfiguring(DbContextOptions options)
+        {
+            options.UseSqlServer(@"Data Source=(local)\v11.0;Initial Catalog=UniversityDb;User ID=sa;Password=1234; Integrated Security=SSPI;");
         }
     }
 }

@@ -252,6 +252,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510131133119_intialModelsAddedAndConfigured.cs" />
+    <Compile Include="Migrations\201510131133119_intialModelsAddedAndConfigured.Designer.cs">
+      <DependentUpon>201510131133119_intialModelsAddedAndConfigured.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -327,6 +331,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510131133119_intialModelsAddedAndConfigured.resx">
+      <DependentUpon>201510131133119_intialModelsAddedAndConfigured.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
