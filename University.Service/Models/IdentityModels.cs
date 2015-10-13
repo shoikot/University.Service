@@ -92,7 +92,7 @@ namespace University.Service.Models
 
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Department>().HasKey(p => p.DepartmentId);
 
-            modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Department>().HasRequired(p => p.FileStorage).WithMany().HasForeignKey(p=>p.FileStorage);
+            modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Department>().HasRequired(p => p.FileStorage).WithMany().HasForeignKey(p=>p.FileStorageId);
 
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.DepartmentCourse>().HasKey(p=>p.DepartmentCourseId);
 
