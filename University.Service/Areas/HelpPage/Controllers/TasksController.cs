@@ -14,16 +14,24 @@ using University.Service.Models;
 
 namespace University.Service.Areas.HelpPage.Controllers
 {
+    /// <summary>
+    /// Manage every things related to tasks of different employees and user  
+    /// </summary>
     public class TasksController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// Get all the tasks
+        /// </summary>
         // GET: api/Tasks
         public IQueryable<Models.Task> GetTasks()
         {
             return db.Tasks;
         }
-
+        /// <summary>
+        /// Get Task by ID.
+        /// </summary>
         // GET: api/Tasks/5
         [ResponseType(typeof(Models.Task))]
         public async Task<IHttpActionResult> GetTask(int id)
@@ -37,6 +45,9 @@ namespace University.Service.Areas.HelpPage.Controllers
             return Ok(task);
         }
 
+        /// <summary>
+        /// Update an exsisting task.
+        /// </summary>
         // PUT: api/Tasks/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutTask(int id, Models.Task task)
@@ -72,6 +83,9 @@ namespace University.Service.Areas.HelpPage.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Create a new task by posting realted data
+        /// </summary>
         // POST: api/Tasks
         [ResponseType(typeof(Models.Task))]
         public async Task<IHttpActionResult> PostTask(Models.Task task)
@@ -87,6 +101,9 @@ namespace University.Service.Areas.HelpPage.Controllers
             return CreatedAtRoute("DefaultApi", new { id = task.TaskId }, task);
         }
 
+        /// <summary>
+        /// Delete a task by sending its ID
+        /// </summary>
         // DELETE: api/Tasks/5
         [ResponseType(typeof(Models.Task))]
         public async Task<IHttpActionResult> DeleteTask(int id)

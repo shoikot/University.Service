@@ -14,16 +14,25 @@ using University.Service.Models;
 
 namespace University.Service.Areas.HelpPage.Controllers
 {
+    /// <summary>
+    /// Manage every things related to events arrenged at the university 
+    /// </summary>
     public class EventsController : ApiController
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+        /// <summary>
+        /// Get all the events 
+        /// </summary>
         // GET: api/Events
         public IQueryable<Event> GetEvents()
         {
             return db.Events;
         }
 
+        /// <summary>
+        /// Get an event by providing its ID 
+        /// </summary>
         // GET: api/Events/5
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> GetEvent(int id)
@@ -37,6 +46,9 @@ namespace University.Service.Areas.HelpPage.Controllers
             return Ok(@event);
         }
 
+        /// <summary>
+        /// Edit an event by putting the edited event
+        /// </summary>
         // PUT: api/Events/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutEvent(int id, Event @event)
@@ -72,6 +84,9 @@ namespace University.Service.Areas.HelpPage.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
+        /// <summary>
+        /// Create a new event by posting related data
+        /// </summary>
         // POST: api/Events
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> PostEvent(Event @event)
@@ -87,6 +102,9 @@ namespace University.Service.Areas.HelpPage.Controllers
             return CreatedAtRoute("DefaultApi", new { id = @event.EventId }, @event);
         }
 
+        /// <summary>
+        /// delete a event by posting the ID of the event
+        /// </summary>
         // DELETE: api/Events/5
         [ResponseType(typeof(Event))]
         public async Task<IHttpActionResult> DeleteEvent(int id)
