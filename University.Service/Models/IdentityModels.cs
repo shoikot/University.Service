@@ -19,7 +19,7 @@ namespace University.Service.Models
         }
     }
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext()
             : base("Data Source=AMINUL;Initial Catalog=UniversityDb;Persist Security Info=True;User ID=sa;Password=1234; Integrated Security=SSPI;")
