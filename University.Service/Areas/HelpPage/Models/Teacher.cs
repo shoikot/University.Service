@@ -13,9 +13,6 @@ namespace University.Service.Areas.HelpPage.Models
         public int YearOfExperience { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
-
-        public int UserRoleId { get; set; }
-        public UserRole UserRole { get; set; }
         public List<Course> Courses { get; set; }
 
     }

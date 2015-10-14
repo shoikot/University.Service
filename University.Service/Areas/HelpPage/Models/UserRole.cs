@@ -12,9 +12,7 @@ namespace University.Service.Areas.HelpPage.Models
 
         public string RoleName { get; set; }//use enum?
 
-        public List<Employee> Employees { get; set; }
-
-        public List<Teacher> Teachers { get; set; }
+        public List<User> Users { get; set; }
     }
 
 

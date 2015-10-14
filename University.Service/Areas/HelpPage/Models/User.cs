@@ -19,6 +19,9 @@ namespace University.Service.Areas.HelpPage.Models
 
         public string NickName { get; set; }
 
+        public int UserRoleId { get; set; }
+        public UserRole UserRole { get; set; }
+
         public List<FileStorage> FileStorages { get; set; }
 
         public Gender UserGender { get; set; }

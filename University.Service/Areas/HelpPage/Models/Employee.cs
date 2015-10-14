@@ -10,8 +10,6 @@ namespace University.Service.Areas.HelpPage.Models
     {
         public int EmployeeId { get; set; }
 
-        public int UserRoleId { get; set; }
-        public UserRole UserRole { get; set; }
         public List<Event> AssignedEvents { get; set; }
 
         public List<Task> Tasks { get; set; }

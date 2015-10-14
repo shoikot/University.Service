@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
+using System.Data.Entity;
 
 namespace University.Service.Models
 {
@@ -21,7 +22,7 @@ namespace University.Service.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("Data Source=AMINUL;Initial Catalog=UniversityDb;Persist Security Info=True;User ID=sa;Password=1234; Integrated Security=SSPI;")
         {
         }
         
@@ -102,8 +103,6 @@ namespace University.Service.Models
 
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Employee>().HasKey(p=>p.EmployeeId);
 
-            modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Employee>().HasRequired(p => p.UserRole).WithMany(p => p.Employees).HasForeignKey(p=>p.UserRoleId);
-
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Event>().HasKey(p=>p.EventId);
 
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Event>().HasRequired(p => p.EventTime).WithMany().HasForeignKey(p=>p.EventTimeTableId);
@@ -123,6 +122,14 @@ namespace University.Service.Models
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Result>().HasRequired(p => p.TimeTable).WithMany().HasForeignKey(p=>p.TimeTableId);
 
             modelBuilder.Entity<University.Service.Areas.HelpPage.Models.Student>().HasKey(p => p.StudentId);
+
+            modelBuilder.Entity<University.Service.Areas.HelpPage.Models.User>().HasOptional(p => p.UserRole).WithMany(p => p.Users).HasForeignKey(p=>p.UserRoleId);
+
+            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
+            
+            modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
+
+            modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
         }
     }
 }
